@@ -1,5 +1,6 @@
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:bytebank/components/mensagem.dart';
+import 'package:bytebank/screens/autenticacao/registrar.dart';
 import 'package:bytebank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -132,12 +133,13 @@ class Login extends StatelessWidget {
                       ),
                       (route) => false,
                     );
+                  } else {
+                    exibirAlerta(
+                      context: context,
+                      titulo: 'ATENÇÃO',
+                      content: 'CPF ou Senha incorretos',
+                    );
                   }
-                  exibirAlerta(
-                    context: context,
-                    titulo: 'ATENÇÃO',
-                    content: 'CPF ou Senha incorretos',
-                  );
                 }
               },
             ),
@@ -165,7 +167,12 @@ class Login extends StatelessWidget {
                 overlayColor: MaterialStateProperty.all<Color>(
                     Color.fromRGBO(71, 161, 56, 0.2))),
             child: Text('Criar uma conta >'),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Registrar()),
+              );
+            },
           ),
         ],
       ),
