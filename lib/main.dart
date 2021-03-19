@@ -1,5 +1,5 @@
 import 'package:bytebank/models/transferencias.dart';
-import 'package:bytebank/screens/dashboard/dashboard.dart';
+import 'package:bytebank/screens/autenticacao/login.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,13 +19,13 @@ class BytebankApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.green[900],
-        accentColor: Colors.blueAccent[700],
+        accentColor: Color.fromRGBO(71, 161, 53, 1),
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.blueAccent[700],
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      home: Dashboard(),
+      home: Login(),
     );
   }
 }
